@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Soykafposting images</title>
+  </head>
+
+  <body>
+    {% if images %}
+      <ul>
+      {% for image in images %}
+        <li><a href="{{ image.image.url }}">{{ image.image.name }}
+        <img src="{{ image.image.url }}" alt="{{ image.image.name }}">
+        </a></li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p>No images.</p>
+    {% endif %}
+  </body>
+
+</html>

@@ -8,7 +8,12 @@ from .forms import UploadForm
 from .models import Image
 
 def index(request):
-    return HttpResponse('Hello World!')
+    images = Image.objects.all()
+    return render_to_response(
+        'index.html',
+        {'images': images},
+        context_instance=RequestContext(request)
+    )
 
 
 def add(request):
